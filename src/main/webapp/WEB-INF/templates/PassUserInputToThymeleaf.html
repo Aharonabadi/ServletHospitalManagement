@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>PassUserInputToThymeleaf</title>
+</head>
+<body>
+
+No encoding: <span th:utext="${firstname}">Default value</span>
+<br>
+Thymeleaf encoding: <span th:text="${firstname}">Default value</span>
+<br>
+OWASP java encoding: <span th:utext="${middlename}">Default value</span>
+<br>
+HomeMade java encoding: <span th:utext="${lastname}">Default value</span>
+<br>
+Double encoding (OWASP & Thymeleaf): <span th:text="${middlename}">Default value</span>
+<br>
+Double encoding (HomeMade & Thymeleaf): <span th:text="${lastname}">Default value</span>
+<br>
+
+</body>
+</html>

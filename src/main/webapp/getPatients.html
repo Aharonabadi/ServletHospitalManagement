@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>SHOW DOCTORS</title>
+<script>
+</script>
+<style>
+body{
+}
+table {
+  		font-family: arial, sans-serif;
+  		border-collapse: collapse;
+ 		width: 100%;
+	}
+
+	td, th {
+ 		border: 1px solid #dddddd;
+  		text-align: left;
+  		padding: 8px;
+	}
+
+		tr:nth-child(even) {
+  		background-color: #dddddd;
+	}
+
+button {
+  display: block;
+  color: white;
+  background-color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+#add input{
+	padding: 25px 10px;
+	margin:3px;
+	width: 40%;
+	font-size: 22px;
+}
+</style>
+<script>
+
+function doc() {
+	  var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+	      document.getElementById("box").innerHTML =
+	      this.responseText;
+	    }
+	  };
+	  xhttp.open("GET", "RetrievePatients", true);
+	  xhttp.send();
+	}
+
+function doc1() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("box1").innerHTML =
+                this.responseText;
+        }
+    };
+    xhttp.open("GET", "RetrievePatientsDID?did=1", true);
+    xhttp.send();
+}
+function doc2() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("box2").innerHTML =
+                this.responseText;
+        }
+    };
+    xhttp.open("GET", "RetrievePatientsDIDSafe?did=1", true);
+    xhttp.send();
+}
+</script>
+</head>
+<body>
+<h2 align=center>GET ALL PATIENTS <br><br><button align =center type="button" onclick="doc()">CLICK</button></h2><br><br>
+<div id="box">
+
+</div>
+<br><br>
+<h2 align=center>GET PATIENT (UNSAFE)<br><br><button align =center type="button" onclick="doc1()">CLICK ME</button></h2><br><br>
+<div id="box1">
+
+</div>
+<br><br>
+<h2 align=center>GET PATIENT (SAFE)<br><br><button align =center type="button" onclick="doc2()">CLICK ME</button></h2><br><br>
+<div id="box2">
+
+</div>
+</body>
+</html>
